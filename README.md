@@ -361,7 +361,7 @@ display_grade_stat()
 Write a unit test for ```extract_position()``` function. Submit it at [Unit Testing 1](https://www.gradescope.com/courses/206382/assignments/1045905) at gradescope.
 ```python
 # by Kami Bigdely
-# Replace nested conditional with gaurd clauses
+# Replace nested conditional with guard clauses
 
 def extract_position(line):
     if not line:
