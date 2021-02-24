@@ -166,12 +166,12 @@ tissue (unitless).
 """
 return math.log(carbon_14_ratio) / DECAY_CONSTANT * T_HALF 
 
-# TODO: Write a unit test which feed 0.35 to the function. 
+# TODO: Write a unit test which feed 0.35 to the function.
 # The result should be '8680.34'. Does the function handles 
 # every possible input correctly? What if the input is zero
 # or negative?
 # Add the necessary logic to make sure the function handle 
-# every possible input properly. Then write a unit test againt 
+# every possible input properly. Then write a unit test against
 # this special case.
 
 ```
@@ -203,10 +203,9 @@ class Wallet(object):
 
     def add_cash(self, amount):
         self.balance += amount
-
 ```
 
-Consider the constructor of the class. If the caller does not pass any initial amount, the defulat value of 0 will be set to self.balance. Otherwise, the value sent to the constructor is set to the ```self.balance```.
+Consider the constructor of the class. If the caller does not pass any initial amount, the default value of 0 will be set to self.balance. Otherwise, the value sent to the constructor is set to the ```self.balance```.
 
 Now, let’s write some unit test for the above class in a different file:
 
@@ -256,7 +255,7 @@ Now, let’s rewrite our test using fixtures to see how they help us to shorten 
 
 ### Re-write our test with Fixtures
 
-You may have noticed some repetition in each test function. Can you spot them? The repetition happened in creation of ‘wallet’ object. In every test funciton, we have created Wallet() object with different initial values. We can rewrite them using fixtures:
+You may have noticed some repetition in each test function. Can you spot them? The repetition happened in creation of ‘wallet’ object. In every test function, we have created Wallet() object with different initial values. We can rewrite them using fixtures:
 
 ```python
 # test_wallet.py
@@ -292,14 +291,13 @@ def test_wallet_spend_cash_raises_exception_on_insufficient_amount(empty_wallet)
     with pytest.raises(InsufficientAmount):
         empty_wallet.spend_cash(100)
 
-
 ```
 
 In the above code, we have defined two fixture functions:
 
 1. wallet()
 2. empty_wallet()
-   
+
 
 The ```@pytest.fixture``` decorator is used to tell pytest that a function is a fixture. When you put the fixture name (‘empty_wallet’ or ‘wallet’) in the parameter list of a test function, pytests runs the fixture and replaces the parameter with it before running the test. In other words, these two fixture functions are used to initialize the method parameters ‘wallet’ and ‘empty_wallet’ respectively in test functions.
 
