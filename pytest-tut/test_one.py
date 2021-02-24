@@ -1,5 +1,6 @@
-import pytest
 """test_one.py"""
+import pytest
+import math
 
 def calculate_kinetic_energy(mass, velocity): 
     """Returns kinetic energy of mass [kg] with velocity [ms]."""
@@ -42,3 +43,21 @@ def test_palindrom_isBoolean():
     word = "Kami"
     assert palindrome(word) == False
 
+"""practice 2"""
+T_HALF = 5730
+DECAY_CONSTANT = -0.693
+
+def get_age_carbon_14_dating(carbon_14_ratio):
+    """Returns the estimated age of the sample in year.
+     carbon_14_ratio: the percent (0 < percent < 1) of carbon-14
+     in the sample conpared to the amount in living
+     tissue (unitless)."""
+    if carbon_14_ratio <= 0:
+        raise TypeError('Cannot be zero or negative')
+    return math.log(carbon_14_ratio) / DECAY_CONSTANT * T_HALF
+
+def test_carbon_dating():
+    carbon_14_ratio = 0.35
+    assert get_age_carbon_14_dating(carbon_14_ratio) == 8680.34743633106
+    with pytest.raises(TypeError):
+        get_age_carbon_14_dating(0)
