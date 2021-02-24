@@ -1,6 +1,7 @@
 """test_one.py"""
 import pytest
 import math
+from practice_three import calculate_stat
 
 def calculate_kinetic_energy(mass, velocity): 
     """Returns kinetic energy of mass [kg] with velocity [ms]."""
@@ -61,3 +62,8 @@ def test_carbon_dating():
     assert get_age_carbon_14_dating(carbon_14_ratio) == 8680.34743633106
     with pytest.raises(TypeError):
         get_age_carbon_14_dating(0)
+
+"""practice 3 use pytest -s"""
+def test_calculate_stat():
+    grade_list = [88, 55, 44, 76, 90]
+    assert calculate_stat(grade_list) == (70.6, 18.216476058777122)
