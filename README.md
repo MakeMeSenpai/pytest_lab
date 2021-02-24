@@ -6,19 +6,6 @@ Enter the following command in your terminal:
 
 > $ pip install pytest
 
-Note: If you get an the following warning:
-
-```
-
- WARNING: The scripts py.test and pytest are installed in '/home/kami/.local/bin' which is not on PATH.
-```
-
-Add the installation path  (/home/kami/.local/bin) to your PATH,  by running the following command:
-```
-
-> $ export PATH="$HOME/.local/bin:$PATH"
-```
-
 ## Getting Started with pytest
 
 pytest works by finding test files and then running test classes and test functions in them. It finds the tests by searching in current folder and sub-folders for any files whose names starts or ends with  **\_test** or **test\_** respectively as follows:
@@ -49,7 +36,6 @@ Now, let’s write a test:
 def calculate_kinetic_energy(mass, velocity): 
     """Returns kinetic energy of mass [kg] with velocity [ms]."""
     return 0.5 * mass * velocity ** 2
-
 ```
 
 Assume we want to test the above method using pytest. To do so, we  write (in the same file):
@@ -95,7 +81,6 @@ Now let’s write a failing test to see how pytest behaves. Assume a new program
 def calculate_kinetic_energy(mass, velocity): 
     """Returns kinetic energy of mass [kg] with velocity [ms]."""
     return mass * velocity ** 2
-
 ```
 Fortunately, there is a unit test for this function. Let’s see how pytest catch this bug. Make sure you have changed your program to reflect the bug. Then run the following command in the terminal:
 ```> pytest```
