@@ -111,7 +111,7 @@ Write a unit test for it. Does this function handle every possible input properl
 
 ### Test for Exception
 
-Assume you have a function that should raise an exception in a particular situation. You want to write a test to make sure the function rasies the exception. How would you do that with pytest?
+Assume you have a function that should raise an exception in a particular situation. You want to write a test to make sure the function raises the exception. How would you do that with pytest?
 
 Consider the following code:
 
@@ -133,7 +133,7 @@ leads to:
 
 ```TypeError: Please provide a string argument```
 
-Assume you have been assinged to write a unit test for this function so that your test verifies the function raises TypeError exception in case somebody passed a non-string value to it. How would you do that?
+Assume you have been assigned to write a unit test for this function so that your test verifies the function raises TypeError exception in case somebody passed a non-string value to it. How would you do that?
 
 We write the unit test as follows: 
 
